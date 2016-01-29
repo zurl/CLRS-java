@@ -32,6 +32,7 @@ public class Inversion {
         return ans;
     }
     public static int sort(int[] a){
+        //o(nlgn)
         return mSort(a,0,a.length-1);
     }
     public static void main(String[] args){
