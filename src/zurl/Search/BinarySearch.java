@@ -1,5 +1,4 @@
 package zurl.Search;
-
 /**
  * Created by furry on 1/29/2016.
  */
@@ -20,7 +19,13 @@ public class BinarySearch {
         return -1;
     }
     public static void main(String[] args){
-        int[] test = {9,8,7,6,5,4,3};
-        System.out.println(search(test,7));
+        int[] test = new int[10];
+        for(int i=0;i<test.length;i++)
+            test[i] = (int)(1+Math.random()*(1000-1+1));
+        zurl.Sort.InsertSort.sort(test);
+        for(int x :test)
+            System.out.print(x+" ");
+        System.out.println();
+        System.out.println(search(test,test[5]));
     }
 }
