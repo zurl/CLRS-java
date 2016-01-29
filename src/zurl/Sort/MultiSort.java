@@ -5,9 +5,24 @@ import java.util.Date;
 /**
  * Created by furry on 1/29/2016.
  */
-public class MergeSort {
+public class MultiSort {
+    public static void iSort(int[] a,int l,int r){
+        for(int i=l;i<=r;i++){
+            //Save the key value
+            int key = a[i],j;
+            //Find the insert pos
+            for(j=i-1;j>=l && a[j]>key;j--){
+                a[j+1] = a[j];
+            }
+            //insert
+            a[j+1]=key;
+        }
+    }
     public static void mSort(int[] a,int l,int r){
-        if(l==r)return;
+        if(r-l<=8){
+            iSort(a,l,r);
+            return;
+        }
         //part sort
         int mid=(l+r)/2;
         mSort(a,l,mid);
@@ -35,7 +50,7 @@ public class MergeSort {
         mSort(a,0,a.length-1);
     }
     public static void main(String[] args){
-        int[] test = new int[10];
+        int[] test = new int[20];
         for(int i=0;i<test.length;i++)
             test[i] = (int)(1+Math.random()*(1000-1+1));
         for(int x :test)
