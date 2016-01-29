@@ -6,10 +6,13 @@ package zurl.Sort;
 public class InsertSort {
     public static void sort(int[] a){
         for(int i=1;i<=a.length-1;i++){
+            //Save the key value
             int key = a[i],j;
+            //Find the insert pos
             for(j=i-1;j>=0 && a[j]>key;j--){
                 a[j+1] = a[j];
             }
+            //insert
             a[j+1]=key;
         }
     }
