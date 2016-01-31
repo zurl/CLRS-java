@@ -30,13 +30,13 @@ public class Main {
         zurl.Math.Inversion.main(e);
 
         //Chapter 4
-        zurl.DivideAndConquer.MartixMultiplication.main(e);
-        zurl.DivideAndConquer.MaxSubArray.main(e);
+        //zurl.DivideAndConquer.MartixMultiplication.main(e);
+        //zurl.DivideAndConquer.MaxSubArray.main(e);
         //Chapter 5
 
-        zurl.Random.Permute.main(e);
+        //zurl.Random.Permute.main(e);
         //Problem II
-        zurl.Search.RandomSearch.main(e);
+        //zurl.Search.RandomSearch.main(e);
 
     }
 }
