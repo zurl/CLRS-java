@@ -30,7 +30,7 @@ public class Main {
         zurl.Math.Inversion.main(e);
 
         //Chapter 4
-        zurl.DivideAndConquer.MartixMultiplication.main(e);
+        zurl.Math.MartixMultiplication.main(e);
         zurl.DivideAndConquer.MaxSubArray.main(e);
 
         //Chapter 5
