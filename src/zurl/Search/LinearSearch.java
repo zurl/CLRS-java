@@ -1,4 +1,4 @@
-package zurl.Search;
+package Zurl.Search;
 
 /**
  * Created by furry on 1/29/2016.

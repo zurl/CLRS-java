@@ -1,4 +1,4 @@
-package zurl.DivideAndConquer;
+package Zurl.DivideAndConquer;
 
 /**
  * Created by furry on 1/31/2016.
