@@ -1,4 +1,4 @@
-package zurl.Search;
+package Zurl.Search;
 /**
  * Created by furry on 1/29/2016.
  */
@@ -22,7 +22,7 @@ public class BinarySearch {
         int[] test = new int[10];
         for(int i=0;i<test.length;i++)
             test[i] = (int)(1+Math.random()*(1000-1+1));
-        zurl.Sort.InsertSort.sort(test);
+        Zurl.Sort.InsertSort.sort(test);
         for(int x :test)
             System.out.print(x+" ");
         System.out.println();

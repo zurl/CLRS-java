@@ -1,4 +1,4 @@
-package zurl;
+package Zurl;
 
 public class Main {
 
@@ -10,30 +10,30 @@ public class Main {
         //Chapter 2
 
         //Section 2.1
-        zurl.Sort.InsertSort.main(e);
-        zurl.Sort.SelectSort.main(e);
-        zurl.Search.LinearSearch.main(e);
+        Zurl.Sort.InsertSort.main(e);
+        Zurl.Sort.SelectSort.main(e);
+        Zurl.Search.LinearSearch.main(e);
 
         //Section 2.3
-        zurl.Search.BinarySearch.main(e);
-        zurl.Sort.BubbleSort.main(e);
+        Zurl.Search.BinarySearch.main(e);
+        Zurl.Sort.BubbleSort.main(e);
 
         //Section 2.4
-        zurl.Sort.MergeSort.main(e);
+        Zurl.Sort.MergeSort.main(e);
         //2.2.1
-        zurl.Sort.MultiSort.main(e);
+        Zurl.Sort.MultiSort.main(e);
         //2.2.2
-        zurl.Sort.BubbleSort.main(e);
+        Zurl.Sort.BubbleSort.main(e);
         //2.2.3
-        zurl.Math.Qinjiushao.main(e);
+        Zurl.Math.Qinjiushao.main(e);
         //2.2.4
-        zurl.Math.Inversion.main(e);
+        Zurl.Math.Inversion.main(e);
 
         //Chapter 4
-        zurl.Math.MartixMultiplication.main(e);
-        zurl.DivideAndConquer.MaxSubArray.main(e);
+        Zurl.Math.MartixMultiplication.main(e);
+        Zurl.DivideAndConquer.MaxSubArray.main(e);
 
         //Chapter 5
-        zurl.Random.Permute.main(e);
+        Zurl.Random.Permute.main(e);
     }
 }

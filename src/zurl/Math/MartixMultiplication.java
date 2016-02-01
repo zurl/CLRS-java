@@ -1,4 +1,4 @@
-package zurl.Math;
+package Zurl.Math;
 
 /**
  * Created by furry on 1/31/2016.

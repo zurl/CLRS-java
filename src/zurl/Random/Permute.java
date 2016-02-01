@@ -1,4 +1,4 @@
-package zurl.Random;
+package Zurl.Random;
 
 /**
  * Created by furry on 1/31/2016.

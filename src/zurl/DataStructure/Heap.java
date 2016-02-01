@@ -1,4 +1,4 @@
-package zurl.DataStructure;
+package Zurl.DataStructure;
 
 /**
  * Created by furry on 1/31/2016.
@@ -29,7 +29,8 @@ public class Heap {
     static public int getRightSon(int x) {
         return 2 * (x + 1);
     }
-   static public int getParent(int x) {
+
+    static public int getParent(int x) {
         return (x + 1) / 2 - 1;
     }
 
@@ -64,6 +65,8 @@ public class Heap {
                 a[x] = a[getRightSon(x)];
                 a[getRightSon(x)] = t;
                 x = getRightSon(x);
+            } else {
+                return;
             }
             //x>l>r || x>r>l
         }
@@ -122,16 +125,17 @@ public class Heap {
     }
 
     static public boolean isMaxHeap(int[] a) {
-        for (int i = 0; i <= a.length; i++){
-            if(getLeftSon(i)<a.length){
-                if (a[i] < a[getLeftSon(i)])return false;
-            }else return true;
-            if(getRightSon(i)<a.length){
-                if (a[i] < a[getRightSon(i)])return false;
-            }else return true;
+        for (int i = 0; i <= a.length; i++) {
+            if (getLeftSon(i) < a.length) {
+                if (a[i] < a[getLeftSon(i)]) return false;
+            } else return true;
+            if (getRightSon(i) < a.length) {
+                if (a[i] < a[getRightSon(i)]) return false;
+            } else return true;
         }
         return true;
     }
+
     static public void main(String[] args) {
         int[] test = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
         makeHeap(test);

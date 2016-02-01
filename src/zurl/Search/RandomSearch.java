@@ -1,4 +1,4 @@
-package zurl.Search;
+package Zurl.Search;
 
 /**
  * Created by furry on 1/31/2016.
@@ -9,7 +9,7 @@ public class RandomSearch {
         int[] b = new int[a.length];
         for(int i = 0;i<a.length;i++)
             b[i]=i;
-        zurl.Random.Permute.permute(b);
+        Zurl.Random.Permute.permute(b);
         for(int i=0;i<=a.length-1;i++){
             if(a[b[i]] == x)
                 return b[i];
