@@ -18,10 +18,11 @@ public class BubbleSort {
             if(flag == 0)break;
         }
     }
-    public static void main(String[] args){
-        int[] test = {9,8,7,6,5,4,3};
+
+    public static void main(String[] args) {
+        int[] test = {9, 8, 7, 6, 5, 4, 3};
         sort(test);
-        for(int x : test)
+        for (int x : test)
             System.out.println(x);
     }
 }
