@@ -1,5 +1,7 @@
 package Zurl.Math;
 
+import java.util.function.*;
+
 /**
  * Created by furry on 1/31/2016.
  */
@@ -22,6 +24,12 @@ public class Matrix {
         this.row = row;
     }
 
+    public int get(int x,int y){
+        return val[x][y];
+    }
+    public void set(int x,int y,int value){
+        val[x][y] = value;
+    }
     int column, row;
 
     public Matrix(int _n) {
@@ -36,10 +44,10 @@ public class Matrix {
         column = _m;
     }
 
-    public void fill(int a) {
+    public void fill(Supplier<Integer> filler) {
         for (int i = 0; i <= row - 1; i++) {
             for (int j = 0; j <= column - 1; j++) {
-                val[i][j] = a;
+                val[i][j] = filler.get();
             }
         }
     }

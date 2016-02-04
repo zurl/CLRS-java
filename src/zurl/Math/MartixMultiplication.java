@@ -43,8 +43,8 @@ public class MartixMultiplication {
     public static void main(String[] args) {
         Matrix a = new Matrix(10);
         Matrix b = new Matrix(10);
-        a.fill(1);
-        b.fill(2);
+        a.fill(()->1);
+        b.fill(()->1);
         System.out.println("== == == ==");
         normalMultiply(a, b).print();
         divideAndConquerMultiply(a, b).print();

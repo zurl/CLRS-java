@@ -8,18 +8,36 @@ public class Heap {
 
     //Heap Data Structure
 
-    int[] v;
+    Vector elementData;
 
-    public Heap(int n) {
-        v = new int[n];
+
+    public Heap() {
+        elementData = new Vector();
     }
 
-    public Heap(int[] v) {
-        this.v = v;
-        makeHeap(v);
+    public Heap(int length) {
+        elementData = new Vector(length);
     }
 
+    public void insert(int x) {
+        elementData.push(x);
+        insertIntoHeap(elementData.getInnerArray(), elementData.getLength()-1);
+    }
 
+    public int getMax() {
+        return elementData.get(0);
+    }
+
+    public void popMax() {
+        int t = elementData.getInnerArray()[0];
+        elementData.getInnerArray()[0] = elementData.getInnerArray()[elementData.getLength() - 1];
+        elementData.pop();
+        maxHeapifyWithoutRecursive(elementData.getInnerArray(), 0, elementData.getLength());
+    }
+
+    public int getLength(){
+        return elementData.getLength();
+    }
     //Heap Algorithm
 
     static public int getLeftSon(int x) {
@@ -36,72 +54,47 @@ public class Heap {
 
     static public void maxHeapifyWithoutRecursive(int[] a, int x, int length) {
         while (x < length / 2) { //Is the Son Node
-            if (getLeftSon(x) < length && a[getLeftSon(x)] > a[x]) {
-                if (getRightSon(x) < length && a[getRightSon(x)] > a[x]) {
-                    if (a[getRightSon(x)] < a[getLeftSon(x)]) {
-                        //l>r>x
-                        int t = a[x];
-                        a[x] = a[getLeftSon(x)];
-                        a[getLeftSon(x)] = t;
-                        x = getLeftSon(x);
-                    } else {
-                        //r>l>x
-                        int t = a[x];
-                        a[x] = a[getRightSon(x)];
-                        a[getRightSon(x)] = t;
-                        x = getRightSon(x);
-
-                    }
-                } else {
-                    //l>x>r
-                    int t = a[x];
-                    a[x] = a[getLeftSon(x)];
-                    a[getLeftSon(x)] = t;
-                    x = getLeftSon(x);
-                }
-            } else if (getRightSon(x) < length && a[getRightSon(x)] > a[x]) {
-                //r>x>l || r>l>x
+            if (getLeftSon(x) < length && a[getLeftSon(x)] > a[x] &&
+                    !(getRightSon(x) < length && a[getRightSon(x)] > a[x]
+                            && a[getRightSon(x)] > a[getLeftSon(x)])) {
+                //l>r>x || l>x>r
+                int t = a[x];
+                a[x] = a[getLeftSon(x)];
+                a[getLeftSon(x)] = t;
+                x = getLeftSon(x);
+            }
+            else if (getRightSon(x) < length && a[getRightSon(x)] > a[x] &&
+                    !(getLeftSon(x) < length && a[getLeftSon(x)] > a[x]
+                            && a[getRightSon(x)] < a[getLeftSon(x)])) {
+                //r>l>x || r>x>l
                 int t = a[x];
                 a[x] = a[getRightSon(x)];
                 a[getRightSon(x)] = t;
                 x = getRightSon(x);
-            } else {
-                return;
             }
             //x>l>r || x>r>l
+            else return;
         }
     }
 
     static public void maxHeapify(int[] a, int x, int length) {
-        if (getLeftSon(x) < length && a[getLeftSon(x)] > a[x]) {
-            if (getRightSon(x) < length && a[getRightSon(x)] > a[x]) {
-                if (a[getRightSon(x)] < a[getLeftSon(x)]) {
-                    //l>r>x
-                    int t = a[x];
-                    a[x] = a[getLeftSon(x)];
-                    a[getLeftSon(x)] = t;
-                    maxHeapify(a, getLeftSon(x), length);
-                } else {
-                    //r>l>x
-                    int t = a[x];
-                    a[x] = a[getRightSon(x)];
-                    a[getRightSon(x)] = t;
-                    maxHeapify(a, getRightSon(x), length);
-
-                }
-            } else {
-                //l>x>r
-                int t = a[x];
-                a[x] = a[getLeftSon(x)];
-                a[getLeftSon(x)] = t;
-                maxHeapify(a, getLeftSon(x), length);
-            }
-        } else if (getRightSon(x) < length && a[getRightSon(x)] > a[x]) {
-            //r>x>l || r>l>x
+        if (getLeftSon(x) < length && a[getLeftSon(x)] > a[x] &&
+                !(getRightSon(x) < length && a[getRightSon(x)] > a[x]
+                        && a[getRightSon(x)] > a[getLeftSon(x)])) {
+            //l>r>x || l>x>r
+            int t = a[x];
+            a[x] = a[getLeftSon(x)];
+            a[getLeftSon(x)] = t;
+            maxHeapify(a,getLeftSon(x),length);
+        }
+        else if (getRightSon(x) < length && a[getRightSon(x)] > a[x] &&
+                !(getLeftSon(x) < length && a[getLeftSon(x)] > a[x]
+                        && a[getRightSon(x)] < a[getLeftSon(x)])) {
+            //r>l>x || r>x>l
             int t = a[x];
             a[x] = a[getRightSon(x)];
             a[getRightSon(x)] = t;
-            maxHeapify(a, getRightSon(x), length);
+            maxHeapify(a,getRightSon(x),length);
         }
         //x>l>r || x>r>l
     }
@@ -142,5 +135,16 @@ public class Heap {
         for (int x : test)
             System.out.println(x);
         System.out.println(isMaxHeap(test));
+        Heap heap = new Heap();
+        heap.insert(1);
+        heap.insert(2);
+        heap.insert(3);
+        heap.insert(4);
+        System.out.println(heap.getMax());
+        heap.insert(5);
+        System.out.println(heap.getMax());
+        heap.popMax();
+        System.out.println(heap.getMax());
+
     }
 }

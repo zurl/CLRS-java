@@ -1,5 +1,7 @@
 package Zurl;
 
+import java.util.zip.ZipEntry;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -35,5 +37,17 @@ public class Main {
 
         //Chapter 5
         Zurl.Random.Permute.main(e);
+        Zurl.Search.RandomSearch.main(e);
+
+        //Chapter 6
+        Zurl.DataStructure.Heap.main(e);
+        Zurl.Sort.HeapSort.main(e);
+        Zurl.DataStructure.PriorityQueue.main(e);
+        Zurl.Sort.MatrixSort.main(e);
+
+        //Chapter 7
+        Zurl.Sort.QuickSort.main(e);
+        Zurl.Sort.SuperSort.main(e);
+        Zurl.Test.SortPerformance.main(e);
     }
 }
