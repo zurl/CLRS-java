@@ -49,5 +49,13 @@ public class Main {
         Zurl.Sort.QuickSort.main(e);
         Zurl.Sort.SuperSort.main(e);
         Zurl.Test.SortPerformance.main(e);
+
+        //Chapter 8
+        //Note: linear sort are stable
+        Zurl.Sort.RadixSort.main(e);
+        Zurl.Sort.CountSort.main(e);
+        Zurl.Sort.BucketSort.main(e);
+        //strange insert sort
+        Zurl.Sort.ShellSort.main(e);
     }
 }

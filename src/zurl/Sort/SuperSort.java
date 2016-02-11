@@ -28,7 +28,7 @@ public class SuperSort {
             int tt = a[x];
             a[x] = a[r];
             a[r] = tt;
-            int t = Zurl.Sort.QuickSort.normalPartition(a, l, r);
+            int t = Zurl.Sort.QuickSort.hoarePartition(a, l, r);
             uSort(a, l, t - 1);
             uSort(a, t + 1, r);
         }

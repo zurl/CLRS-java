@@ -16,7 +16,6 @@ public class InsertSort {
             a[j + 1] = key;
         }
     }
-
     public static void main(String[] args) {
         int[] test = {9, 8, 7, 6, 5, 4, 3};
         sort(test);
