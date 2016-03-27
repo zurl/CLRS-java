@@ -8,24 +8,24 @@ import java.util.function.*;
 public class QuickSort {
     public static int hoarePartition(int[] a, int l, int r) {
         //init
-
-        int x = a[l];
-        int i = l - 1;
-        int j = r + 1;
-        while (true) {
-            do{j--;}while(a[j]>x);
-            do{i++;}while(a[i]<x);
-            //j--;while(a[j]>x)j--;
-            //i++;while(a[i]<x)i++;
-            if(i<j){
-                int t = a[j];
-                a[j] = a[i];
-                a[i] = t;
-            }else{
-                a[i] = x;
-                return i;
-            }
+        int x = a[r]; //Let a[r] = base value
+        while(l < r){
+            while(a[l]<=x && l<r)l++;//find first a[l] >=x
+            //cir1 : a[l]<x INT
+            //make a[r] = a[l]; r--;
+            if(l<r)a[r--]=a[l];
+            //cir2 l<r INT
+            //break;
+            while(a[r]>=x && l<r)r--;
+            //cir1 : a[r]>=x INT
+            //make a[r] = a[l]; r--;
+            if(l<r)a[l++]=a[r];
+            //cir2 l<r INT
+            //break;
         }
+        //make a[l]=a[r]=x;
+        a[l] = x;
+        return l;
     }
 
     //Thought :: Divide into two part
@@ -54,26 +54,34 @@ public class QuickSort {
         return i + 1;
     }
 
-    public static void qsort(int[] a, int l, int r) {
+    public static void qSort(int[] a, int l, int r) {
         //stop
-        if (l >= r) return;
+        if (r - l < 1) return;
         //Rearrange
         int t = hoarePartition(a, l, r);
-        qsort(a, l, t - 1);
-        qsort(a, t + 1, r);
+        qSort(a, l, t - 1);
+        qSort(a, t + 1, r);
     }
-    public static void qsortWithTailRecursion(int[] a, int l, int r) {
+
+    public static void qSortWithTailRecursion(int[] a, int l, int r) {
         //stop
-        while(l<r){
+        while (l < r) {
             int t = hoarePartition(a, l, r);
-            qsortWithTailRecursion(a, l, t - 1);
-            l=t+1;
+            qSortWithTailRecursion(a, l, t - 1);
+            l = t + 1;
         }
         //Rearrange
     }
 
+    public static void qSortWithThreeRoads(int[] a, int l, int r) {
+        //TODO:: DELAY
+    }
 
-    public static void qsortWithRandom(int[] a, int l, int r) {
+    public static void qSortWithDualRadix(int[] a, int l, int r) {
+        //TODO:: DELAY
+    }
+
+    public static void qSortWithRandom(int[] a, int l, int r) {
         if (l >= r) return;
         //Randomize
         int x = (int) (Math.random() * (r - l)) + l;
@@ -83,19 +91,25 @@ public class QuickSort {
         a[r] = tt;
         //Rearrange
         int t = hoarePartition(a, l, r);
-        qsortWithRandom(a, l, t - 1);
-        qsortWithRandom(a, t + 1, r);
+        qSortWithRandom(a, l, t - 1);
+        qSortWithRandom(a, t + 1, r);
     }
 
     public static void sort(int[] a) {
-        qsortWithTailRecursion(a, 0, a.length - 1);
+        qSort(a, 0, a.length - 1);
     }
 
     public static void main(String[] args) {
-        int[] test = new int[200];
+        int[] test = new int[20];
         for (int i = 0; i < test.length; i++)
             test[i] = (int) (1 + Math.random() * (1000 - 1 + 1));
         for (int x : test)
+            System.out.print(x + " ");
+        System.out.println();
+        int[] a = new int[test.length];
+        System.arraycopy(test, 0, a, 0, test.length);
+        Zurl.Sort.BubbleSort.sort(a);
+        for (int x : a)
             System.out.print(x + " ");
         System.out.println();
         sort(test);

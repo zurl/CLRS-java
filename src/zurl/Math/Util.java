@@ -44,5 +44,8 @@ public class Util {
         Zurl.Sort.QuickSort.sort(test);
         for (int x : test)
             System.out.print(x + " ");
+        int minn = min(test,0,test.length-1);
+        int maxn = max(test,0,test.length-1);
+        System.out.println(minn + " "+maxn);
     }
 }

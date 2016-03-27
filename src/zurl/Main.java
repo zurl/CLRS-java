@@ -57,5 +57,8 @@ public class Main {
         Zurl.Sort.BucketSort.main(e);
         //strange insert sort
         Zurl.Sort.ShellSort.main(e);
+
+        //Chapter 9
+        Zurl.Math.Util.main(e);
     }
 }
