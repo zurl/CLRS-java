@@ -1,4 +1,4 @@
-package Zurl.DataStructure;
+package Zurl.DataStructure.Maps;
 
 /**
  * Created by zcy on 4/5/2016.
@@ -26,13 +26,19 @@ public class Treap <T extends Comparable<T>,Y>
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     protected void afterInsert(BaseNode now) {
-        Heapify((Node)now);
+        Heapify(now);
     }
 
-    protected void Heapify(Node now){
-
+    @SuppressWarnings("unchecked")
+    protected void Heapify(BaseNode now){
+        while(now != root){
+            if(((Node)now).mark < ((Node)((Node)now).parent).mark){
+                if(now == now.parent.left)rotate(now,Direction.right);
+                else rotate(now,Direction.left);
+                if(now.parent.parent == null)root = now;
+            }else return;
+        }
     }
 
 }

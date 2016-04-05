@@ -1,4 +1,6 @@
-package Zurl.DataStructure;
+package Zurl.DataStructure.Maps;
+
+import java.math.BigInteger;
 
 /**
  * Created by zcy on 3/31/2016.
@@ -10,6 +12,8 @@ public class Splay<T extends Comparable,Y>
     @Override
     protected BaseNode BaseNodeFactory(Object _key, Object _value, BaseNode _parent) {
         return new BaseNode(_key,_value,_parent);
+        BigInteger.
+
     }
 
     @Override

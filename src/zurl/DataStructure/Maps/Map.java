@@ -1,4 +1,4 @@
-package Zurl.DataStructure;
+package Zurl.DataStructure.Maps;
 
 /**
  * Created by zcy on 4/4/2016.

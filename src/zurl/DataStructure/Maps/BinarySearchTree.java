@@ -1,6 +1,4 @@
-package Zurl.DataStructure;
-
-import java.util.Comparator;
+package Zurl.DataStructure.Maps;
 
 /**
  * Created by zcy on 3/31/2016.

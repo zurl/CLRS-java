@@ -1,20 +1,20 @@
-package Zurl.DataStructure;
+package Zurl.DataStructure.Maps;
 
 import Zurl.TestConfig;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
- * Created by zcy on 3/31/2016.
+ * Created by zcy on 4/5/2016.
  */
-public class BinarySearchTreeTest {
-    BinarySearchTree<String,String> data = new BinarySearchTree<>();
-    String[] saved ;
+public abstract class MapTest {
+    Map<String,String> data;
+    String[] saved;
     int datasize = TestConfig.MapTestSize;
-    @Before
-    public void setUp() throws Exception {
+
+    MapTest(){}
+
+    protected void baseSetup(){
         data.set("hello","furry");
         saved = new String[datasize +10];
         for(int i = 1 ;i<=datasize ;i++){
@@ -23,6 +23,9 @@ public class BinarySearchTreeTest {
             saved[i] = tmp;
         }
     }
+
+    @Before
+    public abstract void setUp() throws Exception;
 
 
     private String getRandomString(){
