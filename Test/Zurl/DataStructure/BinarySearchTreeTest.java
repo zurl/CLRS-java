@@ -4,18 +4,14 @@ import Zurl.TestConfig;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.*;
-
 import static org.junit.Assert.*;
 
 /**
- * Created by zcy on 3/30/2016.
+ * Created by zcy on 3/31/2016.
  */
-public class HashMapTest {
-
-
-    HashMap<String,String> data = new HashMap<>();
-    String[] saved;
+public class BinarySearchTreeTest {
+    BinarySearchTree<String,String> data = new BinarySearchTree<>();
+    String[] saved ;
     int datasize = TestConfig.MapTestSize;
     @Before
     public void setUp() throws Exception {

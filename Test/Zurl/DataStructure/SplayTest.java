@@ -4,17 +4,12 @@ import Zurl.TestConfig;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.*;
-
-import static org.junit.Assert.*;
-
 /**
- * Created by zcy on 3/30/2016.
+ * Created by zcy on 4/4/2016.
  */
-public class HashMapTest {
+public class SplayTest {
 
-
-    HashMap<String,String> data = new HashMap<>();
+    Splay<String,String> data = new Splay<>();
     String[] saved;
     int datasize = TestConfig.MapTestSize;
     @Before
