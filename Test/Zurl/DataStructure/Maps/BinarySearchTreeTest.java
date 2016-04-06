@@ -1,5 +1,7 @@
 package Zurl.DataStructure.Maps;
 
+import org.junit.Test;
+
 /**
  * Created by zcy on 3/31/2016.
  */
@@ -10,4 +12,6 @@ public class BinarySearchTreeTest
         data = new BinarySearchTree<>();
         baseSetup();
     }
+
+
 }

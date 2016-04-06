@@ -27,6 +27,21 @@ public abstract class MapTest {
     @Before
     public abstract void setUp() throws Exception;
 
+    @Test
+    public void testDelete() throws Exception {
+        data = new BinarySearchTree<>();
+        data.set("hi","ljk");
+        data.set("nihao","ljkaa");
+        data.set("fu","ck");
+        data.set("cao","nima");
+        data.set("shaonian","juhuaxiang");
+        data.set("nia","a");
+        data.set("fz","pa");
+        data.delete("hi");
+        data.delete("fu");
+        data.delete("shaonian");
+        data.delete("hi");
+    }
 
     private String getRandomString(){
         int len = 20 + (int)(Math.random()*100);
