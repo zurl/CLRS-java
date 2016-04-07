@@ -3,6 +3,7 @@ package Zurl.DataStructure.Maps;
 import Zurl.TestConfig;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * Created by zcy on 4/5/2016.
@@ -59,7 +60,9 @@ public abstract class MapTest {
     @Test
     public void testSet() throws Exception {
         for(int i = 1 ;i<=datasize ;i++){
+            int k = data.size();
             data.set(getIncreaseString(),getRandomString());
+            assertEquals(data.size(),k+1);
         }
 
     }
@@ -67,7 +70,9 @@ public abstract class MapTest {
     @Test
     public void testGet() throws Exception {
         for(int i = 1 ;i<=datasize ;i++){
-            data.get(saved[i]);
+            String key = getIncreaseString(),value = getRandomString();
+            data.set(key,value);
+            assertEquals(data.get(key),value);
         }
     }
 }

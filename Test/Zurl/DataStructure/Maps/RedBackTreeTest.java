@@ -1,6 +1,5 @@
 package Zurl.DataStructure.Maps;
 
-import static org.junit.Assert.*;
 
 /**
  * Created by zcy on 4/7/2016.

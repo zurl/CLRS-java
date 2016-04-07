@@ -10,13 +10,4 @@ public class BinarySearchTree <T extends Comparable,Y>
         return new BaseNode(_key,_value,_parent);
     }
 
-    @Override
-    protected void afterFind(BaseNode now) {
-        //do nothing
-    }
-
-    @Override
-    protected void afterInsert(BaseNode now) {
-        //do nothing
-    }
 }

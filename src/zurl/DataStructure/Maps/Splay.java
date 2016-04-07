@@ -12,7 +12,6 @@ public class Splay<T extends Comparable,Y>
     @Override
     protected BaseNode BaseNodeFactory(Object _key, Object _value, BaseNode _parent) {
         return new BaseNode(_key,_value,_parent);
-        BigInteger.
 
     }
 
@@ -20,12 +19,6 @@ public class Splay<T extends Comparable,Y>
     protected void afterFind(BaseNode now) {
         splay(now);
     }
-
-    @Override
-    protected void afterInsert(BaseNode now) {
-        //do nothing
-    }
-
 
 
     private boolean isLeft(BaseNode now){

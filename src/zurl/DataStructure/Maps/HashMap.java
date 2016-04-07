@@ -33,7 +33,20 @@ implements Map<T,Y>
         return (hashCode & 0x7FFFFFFF) % capacity;
     }
 
-
+    @Override
+    public void delete(T key) throws Exception {
+        Node now = data[getHashCode(key.hashCode())];
+        if(now.key.equals(key)) data[getHashCode(key.hashCode())] = now.next;
+        else {
+            while(now.next != null){
+                if(now.next.key.equals(key)){
+                    now.next = now.next.next;
+                    return;
+                }
+            }
+            throw new RuntimeException();
+        }
+    }
 
     @SuppressWarnings("unchecked")
     private void resize(int newsize){

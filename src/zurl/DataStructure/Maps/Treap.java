@@ -15,30 +15,35 @@ public class Treap <T extends Comparable<T>,Y>
         }
     }
 
+
+
     @Override
     protected BaseNode BaseNodeFactory(Object _key, Object _value, BaseNode _parent) {
         return new Node(_key,_value,_parent);
     }
 
+
     @Override
-    protected void afterFind(BaseNode now) {
-        //do nothing
+    protected void beforeDelete(BaseNode now) {
+        while(now.left != null && now.right !=null){
+            rotate(now.left,Direction.right);
+        }
     }
 
     @Override
-    protected void afterInsert(BaseNode now) {
-        Heapify(now);
+    protected BaseNode afterInsert(BaseNode now) {
+        if(now!=root) return Heapify(now);
+        else return now.parent;
     }
 
     @SuppressWarnings("unchecked")
-    protected void Heapify(BaseNode now){
-        while(now != root){
-            if(((Node)now).mark < ((Node)((Node)now).parent).mark){
-                if(now == now.parent.left)rotate(now,Direction.right);
-                else rotate(now,Direction.left);
-                if(now.parent.parent == null)root = now;
-            }else return;
+    protected BaseNode Heapify(BaseNode now){
+        if(((T)now.key).compareTo((T)now.parent.key) > 0){
+            if(now == now.parent.left)rotate(now,Direction.right);
+            else rotate(now,Direction.left);
+            return now;
         }
+        else return now.parent;
     }
 
 }

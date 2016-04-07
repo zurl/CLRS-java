@@ -9,6 +9,7 @@ public interface Map <T,Y> {
     int size();
 
     void set(T key,Y value);
-    Y get(T key);
+    Y get(T key)throws Exception;
+    void delete(T key)throws Exception;
     boolean hasKey(T key);
 }
