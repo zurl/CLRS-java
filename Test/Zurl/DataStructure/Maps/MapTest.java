@@ -18,7 +18,7 @@ public abstract class MapTest {
         data.set("hello","furry");
         saved = new String[datasize +10];
         for(int i = 1 ;i<=datasize ;i++){
-            String tmp =getRandomString();
+            String tmp =getIncreaseString();
             data.set(tmp,getRandomString());
             saved[i] = tmp;
         }
@@ -40,7 +40,6 @@ public abstract class MapTest {
         data.delete("hi");
         data.delete("fu");
         data.delete("shaonian");
-        data.delete("hi");
     }
 
     private String getRandomString(){
@@ -51,11 +50,16 @@ public abstract class MapTest {
         }
         return str;
     }
+    String tmp = "";
+    private String getIncreaseString(){
+        tmp += "a";
+        return tmp;
+    }
 
     @Test
     public void testSet() throws Exception {
         for(int i = 1 ;i<=datasize ;i++){
-            data.set(getRandomString(),getRandomString());
+            data.set(getIncreaseString(),getRandomString());
         }
 
     }
