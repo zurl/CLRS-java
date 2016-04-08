@@ -11,5 +11,6 @@ public interface Map <T,Y> {
     void set(T key,Y value);
     Y get(T key)throws Exception;
     void delete(T key)throws Exception;
+    int order(T key)throws Exception;
     boolean hasKey(T key);
 }
